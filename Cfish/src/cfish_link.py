@@ -28,8 +28,9 @@ def chess_bot(obs):
             continue
             
         if parts[0] == "bestmove":
+            #print(parts)
             move = parts[1]
-            expected_ponder = parts[3]
+            #expected_ponder = parts[3]
             #process.stdin.write(f"go ponder {obs.board} moves {expected_ponder}\n")
             #process.stdin.flush()
             return move
