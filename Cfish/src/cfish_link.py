@@ -1,20 +1,23 @@
 from subprocess import Popen, PIPE
-import os
-import time
 
-# Look for cfish executable in the current directory
 cfish_path = "./cfish"
 process = Popen([cfish_path], stdin=PIPE, stdout=PIPE, text=True)
 process.stdin.write("uci\n")
 process.stdin.flush()  # Flush after UCI command
-
-start = time.time()
+expected_ponder = "skibidi"
 
 def chess_bot(obs):
+    #expected_ponder = expected_ponder
+    #if obs.lastMove == expected_ponder:
+    #    process.stdin.write("ponderhit\n")
+    #else: 
     process.stdin.write(f"position fen {obs.board}\n")
-    process.stdin.write("go movetime 500\n")
-    process.stdin.flush()
-    
+    if obs.mark[0] == 'w':
+        process.stdin.write(f"go wtime {int(obs.remainingOverageTime * 1000)} btime {int(obs.opponentRemainingOverageTime * 1000)}\n")
+        process.stdin.flush()
+    else:
+        process.stdin.write(f"go wtime {int(obs.opponentRemainingOverageTime * 1000)} btime {int(obs.remainingOverageTime * 1000)}\n")
+        process.stdin.flush()
     while True:
         line = process.stdout.readline().strip()
         if not line:  # Skip empty lines
@@ -26,6 +29,7 @@ def chess_bot(obs):
             
         if parts[0] == "bestmove":
             move = parts[1]
-            process.stdin.write(f"position fen {obs.board} moves {move}\n")
-            process.stdin.flush()
+            expected_ponder = parts[3]
+            #process.stdin.write(f"go ponder {obs.board} moves {expected_ponder}\n")
+            #process.stdin.flush()
             return move
