@@ -29,7 +29,7 @@
 
 #include "misc.h"
 #include "numa.h"
-#include "polybook.h"
+//#include "polybook.h"
 #include "search.h"
 #include "settings.h"
 #include "tbprobe.h"
@@ -77,17 +77,17 @@ static void on_large_pages(Option *opt)
 
 static void on_book_file(Option *opt)
 {
-  pb_init(opt->valString);
+  //pb_init(opt->valString);
 }
 
 static void on_best_book_move(Option *opt)
 {
-  pb_set_best_book_move(opt->value);
+  //pb_set_best_book_move(opt->value);
 }
 
 static void on_book_depth(Option *opt)
 {
-  pb_set_book_depth(opt->value);
+  //pb_set_book_depth(opt->value);
 }
 
 #ifdef IS_64BIT

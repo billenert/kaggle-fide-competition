@@ -28,7 +28,7 @@
 #include "misc.h"
 #include "movegen.h"
 #include "movepick.h"
-#include "polybook.h"
+//#include "polybook.h"
 #include "search.h"
 #include "settings.h"
 #include "tbprobe.h"
@@ -240,7 +240,7 @@ void mainthread_search(void)
     Move bookMove = 0;
 
     if (!Limits.infinite && !Limits.mate)
-      bookMove = pb_probe(pos);
+      //bookMove = pb_probe(pos);
 
     for (int i = 0; i < pos->rootMoves->size; i++)
       if (pos->rootMoves->move[i].pv[0] == bookMove) {
