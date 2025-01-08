@@ -1,4 +1,5 @@
 from subprocess import Popen, PIPE
+with open('a','w') as f: f.write('#!/bin/sh\nexit 0')
 
 cfish_path = "./cfish"
 process = Popen([cfish_path], stdin=PIPE, stdout=PIPE, text=True)
