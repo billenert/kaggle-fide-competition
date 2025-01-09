@@ -289,7 +289,7 @@ endif
 ### 3.3 Optimization
 ifeq ($(optimize),yes)
 
-	CFLAGS += -Os
+	CFLAGS += -Oz
 
 	ifeq ($(comp),$(filter $(comp),gcc mingw))
 		ifeq ($(extra),yes)
@@ -553,4 +553,3 @@ icc-profile-use:
 	-@$(CC) $(DEPENDFLAGS) -MM $(OBJS:.o=.c) > $@ 2> /dev/null
 
 -include .depend
-

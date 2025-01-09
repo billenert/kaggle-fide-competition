@@ -1,0 +1,281 @@
+position fen rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1
+go wtime 10000 btime 10000
+bestmove e7e6 ponder b1c3
+position fen rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1 moves e7e6 b1c3
+go ponder
+ponderhit (ignore)
+position fen rnbqkbnr/pppp1ppp/4p3/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq d3 0 2
+go wtime 9326 btime 9229
+bestmove d7d5 ponder e4d5
+position fen rnbqkbnr/pppp1ppp/4p3/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq d3 0 2 moves d7d5 e4d5
+go ponder
+ponderhit (ignore)
+position fen rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 3
+go wtime 9223 btime 9229
+bestmove g8f6 ponder c1g5
+position fen rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 3 moves g8f6 c1g5
+go ponder
+ponderhit (ignore)
+position fen rnbqkb1r/ppp2ppp/4pn2/3P4/3P4/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 4
+go wtime 8886 btime 9229
+bestmove e6d5 ponder g1f3
+position fen rnbqkb1r/ppp2ppp/4pn2/3P4/3P4/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 4 moves e6d5 g1f3
+go ponder
+ponderhit
+bestmove f8d6 ponder f1d3
+position fen rnbqkb1r/ppp2ppp/5n2/3p4/3P4/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 1 5 moves f8d6 f1d3
+go ponder
+ponderhit
+bestmove e8g8 ponder e1g1
+position fen rnbqk2r/ppp2ppp/3b1n2/3p4/3P4/2NB1N2/PPP2PPP/R1BQK2R b KQkq - 3 6 moves e8g8 e1g1
+go ponder
+ponderhit
+bestmove a7a6 ponder c1e3
+position fen rnbq1rk1/ppp2ppp/3b1n2/3p4/3P4/2NB1N2/PPP2PPP/R1BQ1RK1 b - - 5 7 moves a7a6 c1e3
+go ponder
+ponderhit (ignore)
+position fen rnbq1rk1/1pp2ppp/p2b1n2/3p2B1/3P4/2NB1N2/PPP2PPP/R2Q1RK1 b - - 1 8
+go wtime 8008 btime 9229
+bestmove c8e6 ponder c3e2
+position fen rnbq1rk1/1pp2ppp/p2b1n2/3p2B1/3P4/2NB1N2/PPP2PPP/R2Q1RK1 b - - 1 8 moves c8e6 c3e2
+go ponder
+ponderhit
+bestmove h7h6 ponder g5f4
+position fen rn1q1rk1/1pp2ppp/p2bbn2/3p2B1/3P4/3B1N2/PPP1NPPP/R2Q1RK1 b - - 3 9 moves h7h6 g5f4
+go ponder
+ponderhit (ignore)
+position fen rn1q1rk1/1pp2pp1/p2bbn1p/3p4/3P4/3BBN2/PPP1NPPP/R2Q1RK1 b - - 1 10
+go wtime 7846 btime 9131
+bestmove e6g4 ponder e2g3
+position fen rn1q1rk1/1pp2pp1/p2bbn1p/3p4/3P4/3BBN2/PPP1NPPP/R2Q1RK1 b - - 1 10 moves e6g4 e2g3
+go ponder
+ponderhit
+bestmove b8c6 ponder h2h3
+position fen rn1q1rk1/1pp2pp1/p2b1n1p/3p4/3P2b1/3BBNN1/PPP2PPP/R2Q1RK1 b - - 3 11 moves b8c6 h2h3
+go ponder
+ponderhit
+bestmove f8e8 ponder h3g4
+position fen r2q1rk1/1pp2pp1/p1nb1n1p/3p4/3P2b1/3BBNNP/PPP2PP1/R2Q1RK1 b - - 0 12 moves f8e8 h3g4
+go ponder
+ponderhit
+bestmove e8e3 ponder g3h5
+position fen r2qr1k1/1pp2pp1/p1nb1n1p/3p4/3P2P1/3BBNN1/PPP2PP1/R2Q1RK1 b - - 0 13 moves e8e3 g3h5
+go ponder
+ponderhit (ignore)
+position fen r2q2k1/1pp2pp1/p1nb1n1p/3p2P1/3P4/3BrNN1/PPP2PP1/R2Q1RK1 b - - 0 14
+go wtime 7569 btime 8850
+bestmove f6g4 ponder g3f5
+position fen r2q2k1/1pp2pp1/p1nb1n1p/3p2P1/3P4/3BrNN1/PPP2PP1/R2Q1RK1 b - - 0 14 moves f6g4 g3f5
+go ponder
+ponderhit
+bestmove e3e8 ponder g5h6
+position fen r2q2k1/1pp2pp1/p1nb3p/3p1NP1/3P2n1/3BrN2/PPP2PP1/R2Q1RK1 b - - 2 15 moves e3e8 g5h6
+go ponder
+ponderhit
+bestmove g7g6 ponder f5d6
+position fen r2qr1k1/1pp2pp1/p1nb3P/3p1N2/3P2n1/3B1N2/PPP2PP1/R2Q1RK1 b - - 0 16 moves g7g6 f5d6
+go ponder
+ponderhit
+bestmove d8d6 ponder c2c3
+position fen r2qr1k1/1pp2p2/p1nN2pP/3p4/3P2n1/3B1N2/PPP2PP1/R2Q1RK1 b - - 0 17 moves d8d6 c2c3
+go ponder
+ponderhit (ignore)
+position fen r3r1k1/1pp2p2/p1nq2pP/3p4/3P2n1/3B1NP1/PPP2P2/R2Q1RK1 b - - 0 18
+go wtime 7270 btime 8226
+bestmove g4h6 ponder g1g2
+position fen r3r1k1/1pp2p2/p1nq2pP/3p4/3P2n1/3B1NP1/PPP2P2/R2Q1RK1 b - - 0 18 moves g4h6 g1g2
+go ponder
+ponderhit (ignore)
+position fen r3r1k1/1pp2p2/p1nq2pn/3p4/3P4/2PB1NP1/PP3P2/R2Q1RK1 b - - 0 19
+go wtime 7045 btime 8102
+bestmove h6g4 ponder d1d2
+position fen r3r1k1/1pp2p2/p1nq2pn/3p4/3P4/2PB1NP1/PP3P2/R2Q1RK1 b - - 0 19 moves h6g4 d1d2
+go ponder
+ponderhit
+bestmove d6f6 ponder g1g2
+position fen r3r1k1/1pp2p2/p1nq2p1/3p4/3P2n1/2PB1NP1/PP1Q1P2/R4RK1 b - - 2 20 moves d6f6 g1g2
+go ponder
+ponderhit
+bestmove g8g7 ponder f1h1
+position fen r3r1k1/1pp2p2/p1n2qp1/3p4/3P2n1/2PB1NP1/PP1Q1PK1/R4R2 b - - 4 21 moves g8g7 f1h1
+go ponder
+ponderhit
+bestmove e8h8 ponder a1e1
+position fen r3r3/1pp2pk1/p1n2qp1/3p4/3P2n1/2PB1NP1/PP1Q1PK1/R6R b - - 6 22 moves e8h8 a1e1
+go ponder
+ponderhit
+bestmove h8h1 ponder e1h1
+position fen r6r/1pp2pk1/p1n2qp1/3p4/3P2n1/2PB1NP1/PP1Q1PK1/4R2R b - - 8 23 moves h8h1 e1h1
+go ponder
+ponderhit
+bestmove a8h8 ponder h1h8
+position fen r7/1pp2pk1/p1n2qp1/3p4/3P2n1/2PB1NP1/PP1Q1PK1/7R b - - 0 24 moves a8h8 h1h8
+go ponder
+ponderhit
+bestmove g7h8 ponder f3e1
+position fen 7R/1pp2pk1/p1n2qp1/3p4/3P2n1/2PB1NP1/PP1Q1PK1/8 b - - 0 25 moves g7h8 f3e1
+go ponder
+ponderhit (ignore)
+position fen 7k/1pp2p2/p1n2qp1/3p4/3P2n1/2PB1NP1/PP3PK1/3Q4 b - - 1 26
+go wtime 6512 btime 7865
+bestmove c6d8 ponder d1h1
+position fen 7k/1pp2p2/p1n2qp1/3p4/3P2n1/2PB1NP1/PP3PK1/3Q4 b - - 1 26 moves c6d8 d1h1
+go ponder
+ponderhit
+bestmove h8g7 ponder h1h3
+position fen 3n3k/1pp2p2/p4qp1/3p4/3P2n1/2PB1NP1/PP3PK1/7Q b - - 3 27 moves h8g7 h1h3
+go ponder
+ponderhit
+bestmove g4h6 ponder h3d7
+position fen 3n4/1pp2pk1/p4qp1/3p4/3P2n1/2PB1NPQ/PP3PK1/8 b - - 5 28 moves g4h6 h3d7
+go ponder
+ponderhit
+bestmove f6d6 ponder d7d6
+position fen 3n4/1ppQ1pk1/p4qpn/3p4/3P4/2PB1NP1/PP3PK1/8 b - - 7 29 moves f6d6 d7d6
+go ponder
+ponderhit
+bestmove c7d6 ponder d3c2
+position fen 3n4/1pp2pk1/p2Q2pn/3p4/3P4/2PB1NP1/PP3PK1/8 b - - 0 30 moves c7d6 d3c2
+go ponder
+ponderhit (ignore)
+position fen 3n4/1p3pk1/p2p2pn/3p4/3P4/2PB2P1/PP3PK1/4N3 b - - 1 31
+go wtime 6405 btime 7716
+bestmove f7f5 ponder e1c2
+position fen 3n4/1p3pk1/p2p2pn/3p4/3P4/2PB2P1/PP3PK1/4N3 b - - 1 31 moves f7f5 e1c2
+go ponder
+ponderhit (ignore)
+position fen 3n4/1p4k1/p2p2pn/3p1p2/3P4/2PB1KP1/PP3P2/4N3 b - - 1 32
+go wtime 6269 btime 7550
+bestmove h6g4 ponder e1g2
+position fen 3n4/1p4k1/p2p2pn/3p1p2/3P4/2PB1KP1/PP3P2/4N3 b - - 1 32 moves h6g4 e1g2
+go ponder
+ponderhit
+bestmove g7f7 ponder d3c2
+position fen 3n4/1p4k1/p2p2p1/3p1p2/3P2n1/2PB1KP1/PP3PN1/8 b - - 3 33 moves g7f7 d3c2
+go ponder
+ponderhit (ignore)
+position fen 3n4/1p3k2/p2p2p1/3p1p2/P2P2n1/2PB1KP1/1P3PN1/8 b - a3 0 34
+go wtime 6016 btime 7427
+bestmove d8c6 ponder g2f4
+position fen 3n4/1p3k2/p2p2p1/3p1p2/P2P2n1/2PB1KP1/1P3PN1/8 b - a3 0 34 moves d8c6 g2f4
+go ponder
+ponderhit (ignore)
+position fen 8/1p3k2/p1np2p1/3p1p2/P2P2n1/2PBNKP1/1P3P2/8 b - - 2 35
+go wtime 5749 btime 7348
+bestmove g4e3 ponder f3e3
+position fen 8/1p3k2/p1np2p1/3p1p2/P2P2n1/2PBNKP1/1P3P2/8 b - - 2 35 moves g4e3 f3e3
+go ponder
+ponderhit
+bestmove c6a5 ponder e3d2
+position fen 8/1p3k2/p1np2p1/3p1p2/P2P4/2PBK1P1/1P3P2/8 b - - 0 36 moves c6a5 e3d2
+go ponder
+ponderhit
+bestmove a5c4 ponder d2c2
+position fen 8/1p3k2/p2p2p1/n2p1p2/P2P4/2PB2P1/1P1K1P2/8 b - - 2 37 moves a5c4 d2c2
+go ponder
+ponderhit
+bestmove c4b6 ponder a4a5
+position fen 8/1p3k2/p2p2p1/3p1p2/P1nP4/2PB2P1/1PK2P2/8 b - - 4 38 moves c4b6 a4a5
+go ponder
+ponderhit
+bestmove b6c4 ponder b2b4
+position fen 8/1p3k2/pn1p2p1/P2p1p2/3P4/2PB2P1/1PK2P2/8 b - - 0 39 moves b6c4 b2b4
+go ponder
+ponderhit (ignore)
+position fen 8/1p3k2/p2p2p1/P2p1p2/2BP4/2P3P1/1PK2P2/8 b - - 0 40
+go wtime 5071 btime 7270
+bestmove d5c4 ponder b2b3
+position fen 8/1p3k2/p2p2p1/P2p1p2/2BP4/2P3P1/1PK2P2/8 b - - 0 40 moves d5c4 b2b3
+go ponder
+ponderhit
+bestmove c4b3 ponder c2b3
+position fen 8/1p3k2/p2p2p1/P4p2/2pP4/1PP3P1/2K2P2/8 b - - 0 41 moves c4b3 c2b3
+go ponder
+ponderhit
+bestmove g6g5 ponder b3c4
+position fen 8/1p3k2/p2p2p1/P4p2/3P4/1KP3P1/5P2/8 b - - 0 42 moves g6g5 b3c4
+go ponder
+ponderhit
+bestmove f7e6 ponder f2f3
+position fen 8/1p3k2/p2p4/P4pp1/2KP4/2P3P1/5P2/8 b - - 1 43 moves f7e6 f2f3
+go ponder
+ponderhit
+bestmove e6f6 ponder c4d5
+position fen 8/1p6/p2pk3/P4pp1/2KP4/2P2PP1/8/8 b - - 0 44 moves e6f6 c4d5
+go ponder
+ponderhit
+bestmove f6e7 ponder f3f4
+position fen 8/1p6/p2p1k2/P2K1pp1/3P4/2P2PP1/8/8 b - - 2 45 moves f6e7 f3f4
+go ponder
+ponderhit
+bestmove g5g4 ponder c3c4
+position fen 8/1p2k3/p2p4/P2K1pp1/3P1P2/2P3P1/8/8 b - - 0 46 moves g5g4 c3c4
+go ponder
+ponderhit
+bestmove e7d7 ponder c4c5
+position fen 8/1p2k3/p2p4/P2K1p2/2PP1Pp1/6P1/8/8 b - - 0 47 moves e7d7 c4c5
+go ponder
+ponderhit
+bestmove d6c5 ponder d4c5
+position fen 8/1p1k4/p2p4/P1PK1p2/3P1Pp1/6P1/8/8 b - - 0 48 moves d6c5 d4c5
+go ponder
+ponderhit
+bestmove d7c7 ponder d5e6
+position fen 8/1p1k4/p7/P1PK1p2/5Pp1/6P1/8/8 b - - 0 49 moves d7c7 d5e6
+go ponder
+ponderhit
+bestmove c7c6 ponder e6f5
+position fen 8/1pk5/p3K3/P1P2p2/5Pp1/6P1/8/8 b - - 2 50 moves c7c6 e6f5
+go ponder
+ponderhit
+bestmove c6d5 ponder f5g4
+position fen 8/1p6/p1k5/P1P2K2/5Pp1/6P1/8/8 b - - 0 51 moves c6d5 f5g4
+go ponder
+ponderhit
+bestmove d5e6 ponder f4f5
+position fen 8/1p6/p7/P1Pk4/5PK1/6P1/8/8 b - - 0 52 moves d5e6 f4f5
+go ponder
+ponderhit
+bestmove e6d5 ponder g4f4
+position fen 8/1p6/p3k3/P1P2P2/6K1/6P1/8/8 b - - 0 53 moves e6d5 g4f4
+go ponder
+ponderhit (ignore)
+position fen 8/1p6/p4P2/P1Pk4/6K1/6P1/8/8 b - - 0 54
+go wtime 4626 btime 7020
+bestmove d5e6 ponder g4g5
+position fen 8/1p6/p4P2/P1Pk4/6K1/6P1/8/8 b - - 0 54 moves d5e6 g4g5
+go ponder
+ponderhit
+bestmove b7b6 ponder a5b6
+position fen 8/1p6/p3kP2/P1P3K1/8/6P1/8/8 b - - 2 55 moves b7b6 a5b6
+go ponder
+ponderhit (ignore)
+position fen 8/8/pP2kP2/P5K1/8/6P1/8/8 b - - 0 56
+go wtime 4626 btime 6543
+bestmove e6d6 ponder f6f7
+position fen 8/8/pP2kP2/P5K1/8/6P1/8/8 b - - 0 56 moves e6d6 f6f7
+go ponder
+ponderhit
+bestmove d6c5 ponder f7f8q
+position fen 8/5P2/pP1k4/P5K1/8/6P1/8/8 b - - 0 57 moves d6c5 f7f8q
+go ponder
+ponderhit
+bestmove c5c4 ponder b6b7
+position fen 5Q2/8/pP6/P1k3K1/8/6P1/8/8 b - - 0 58 moves c5c4 b6b7
+go ponder
+ponderhit
+bestmove c4b3 ponder b7b8q
+position fen 5Q2/1P6/p7/P5K1/2k5/6P1/8/8 b - - 0 59 moves c4b3 b7b8q
+go ponder
+ponderhit
+bestmove b3c2 ponder b8b4
+position fen 1Q3Q2/8/p7/P5K1/8/1k4P1/8/8 b - - 0 60 moves b3c2 b8b4
+go ponder
+ponderhit
+bestmove c2d3 ponder f8f1
+position fen 5Q2/8/p7/P5K1/1Q6/6P1/2k5/8 b - - 2 61 moves c2d3 f8f1
+go ponder
+ponderhit
+bestmove d3c2 ponder f1b1
+position fen 8/8/p7/P5K1/1Q6/3k2P1/8/5Q2 b - - 4 62 moves d3c2 f1b1
+go ponder

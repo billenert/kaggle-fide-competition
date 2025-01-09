@@ -1,0 +1,2 @@
+settings.o: settings.c numa.h types.h config.h search.h misc.h position.h \
+ bitboard.h magic-plain.h thread.h settings.h tt.h
