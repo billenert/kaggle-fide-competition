@@ -31,7 +31,7 @@
 //#include "polybook.h"
 #include "search.h"
 #include "settings.h"
-#include "tbprobe.h"
+//#include "tbprobe.h"
 #include "timeman.h"
 #include "thread.h"
 #include "tt.h"
@@ -858,10 +858,10 @@ static void uci_print_pv(Pos *pos, Depth depth, Value alpha, Value beta)
     // An incomplete mate PV may be caused by cutoffs in qsearch() and
     // by TB cutoffs. We try to complete the mate PV if we may be in the
     // latter case.
-    if (   abs(v) > VALUE_MATE - MAX_MATE_PLY
-        && rm->move[i].pvSize < VALUE_MATE - abs(v)
-        && TB_MaxCardinalityDTM > 0)
-      TB_expand_mate(pos, &rm->move[i]);
+    // if (   abs(v) > VALUE_MATE - MAX_MATE_PLY
+    //     && rm->move[i].pvSize < VALUE_MATE - abs(v)
+    //     && TB_MaxCardinalityDTM > 0)
+    //   TB_expand_mate(pos, &rm->move[i]);
 
     printf("info depth %d seldepth %d multipv %d score %s",
            d, rm->move[i].selDepth, i + 1,
@@ -920,53 +920,53 @@ static int extract_ponder_from_tt(RootMove *rm, Pos *pos)
   return rm->pvSize > 1;
 }
 
-static void TB_rank_root_moves(Pos *pos, RootMoves *rm)
-{
-  TB_RootInTB = 0;
-  TB_UseRule50 = option_value(OPT_SYZ_50_MOVE);
-  TB_ProbeDepth = option_value(OPT_SYZ_PROBE_DEPTH);
-  TB_Cardinality = option_value(OPT_SYZ_PROBE_LIMIT);
-  int dtz_available = 1, dtm_available = 0;
+// static void TB_rank_root_moves(Pos *pos, RootMoves *rm)
+// {
+//   TB_RootInTB = 0;
+//   TB_UseRule50 = option_value(OPT_SYZ_50_MOVE);
+//   TB_ProbeDepth = option_value(OPT_SYZ_PROBE_DEPTH);
+//   TB_Cardinality = option_value(OPT_SYZ_PROBE_LIMIT);
+//   int dtz_available = 1, dtm_available = 0;
 
-  if (TB_Cardinality > TB_MaxCardinality) {
-    TB_Cardinality = TB_MaxCardinality;
-    TB_ProbeDepth = 0;
-  }
+//   if (TB_Cardinality > TB_MaxCardinality) {
+//     TB_Cardinality = TB_MaxCardinality;
+//     TB_ProbeDepth = 0;
+//   }
 
-  TB_CardinalityDTM =  option_value(OPT_SYZ_USE_DTM)
-                     ? min(TB_Cardinality, TB_MaxCardinalityDTM)
-                     : 0;
+//   TB_CardinalityDTM =  option_value(OPT_SYZ_USE_DTM)
+//                      ? min(TB_Cardinality, TB_MaxCardinalityDTM)
+//                      : 0;
 
-  if (TB_Cardinality >= popcount(pieces()) && !can_castle_any()) {
-    // Try to rank moves using DTZ tables.
-    TB_RootInTB = TB_root_probe_dtz(pos, rm);
+//   if (TB_Cardinality >= popcount(pieces()) && !can_castle_any()) {
+//     // Try to rank moves using DTZ tables.
+//     TB_RootInTB = TB_root_probe_dtz(pos, rm);
 
-    if (!TB_RootInTB) {
-      // DTZ tables are missing.
-      dtz_available = 0;
+//     if (!TB_RootInTB) {
+//       // DTZ tables are missing.
+//       dtz_available = 0;
 
-      // Try to rank moves using WDL tables as fallback.
-      TB_RootInTB = TB_root_probe_wdl(pos, rm);
-    }
+//       // Try to rank moves using WDL tables as fallback.
+//       TB_RootInTB = TB_root_probe_wdl(pos, rm);
+//     }
 
-    // If ranking was successful, try to obtain mate values from DTM tables.
-    if (TB_RootInTB && TB_CardinalityDTM >= popcount(pieces()))
-      dtm_available = TB_root_probe_dtm(pos, rm);
-  }
+//     // If ranking was successful, try to obtain mate values from DTM tables.
+//     if (TB_RootInTB && TB_CardinalityDTM >= popcount(pieces()))
+//       dtm_available = TB_root_probe_dtm(pos, rm);
+//   }
 
-  if (TB_RootInTB) { // Ranking was successful.
-    // Sort moves according to TB rank.
-    stable_sort(rm->move, rm->size);
+//   if (TB_RootInTB) { // Ranking was successful.
+//     // Sort moves according to TB rank.
+//     stable_sort(rm->move, rm->size);
 
-    // Only probe during search if DTM and DTZ are not available
-    // and we are winning.
-    if (dtm_available || dtz_available || rm->move[0].tbRank <= 0)
-      TB_Cardinality = 0;
-  }
-  else // Ranking was not successful.
-    for (int i = 0; i < rm->size; i++)
-      rm->move[i].tbRank = 0;
-}
+//     // Only probe during search if DTM and DTZ are not available
+//     // and we are winning.
+//     if (dtm_available || dtz_available || rm->move[0].tbRank <= 0)
+//       TB_Cardinality = 0;
+//   }
+//   else // Ranking was not successful.
+//     for (int i = 0; i < rm->size; i++)
+//       rm->move[i].tbRank = 0;
+// }
 
 
 // start_thinking() wakes up the main thread to start a new search,
@@ -1005,7 +1005,7 @@ void start_thinking(Pos *root)
     moves->move[i].pv[0] = list[i].move;
 
   // Rank root moves if root position is a TB position.
-  TB_rank_root_moves(root, moves);
+  // TB_rank_root_moves(root, moves);
 
   for (int idx = 0; idx < Threads.numThreads; idx++) {
     Pos *pos = Threads.pos[idx];

@@ -67,7 +67,7 @@ static void on_threads(Option *opt)
 
 static void on_tb_path(Option *opt)
 {
-  TB_init(opt->valString);
+  //TB_init(opt->valString);
 }
 
 static void on_large_pages(Option *opt)
