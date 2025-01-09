@@ -171,59 +171,59 @@ Value search_NonPV(Pos *pos, Stack *ss, Value alpha, Depth depth, int cutNode)
   }
 
   // Step 5. Tablebase probe
-  // if (!rootNode && TB_Cardinality) {
-  //   int piecesCnt = popcount(pieces());
+  if (!rootNode && TB_Cardinality) {
+    int piecesCnt = popcount(pieces());
 
-  //   if (    piecesCnt <= TB_Cardinality
-  //       && (piecesCnt <  TB_Cardinality || depth >= TB_ProbeDepth)
-  //       &&  rule50_count() == 0
-  //       && !can_castle_any())
-  //   {
-  //     int found, wdl = TB_probe_wdl(pos, &found);
+    if (    piecesCnt <= TB_Cardinality
+        && (piecesCnt <  TB_Cardinality || depth >= TB_ProbeDepth)
+        &&  rule50_count() == 0
+        && !can_castle_any())
+    {
+      int found, wdl = TB_probe_wdl(pos, &found);
 
-  //     if (found) {
-  //       pos->tbHits++;
+      if (found) {
+        pos->tbHits++;
 
-  //       int drawScore = TB_UseRule50 ? 1 : 0;
+        int drawScore = TB_UseRule50 ? 1 : 0;
 
-  //       value =  wdl < -drawScore ? -VALUE_MATE + MAX_MATE_PLY + 1 + ss->ply
-  //              : wdl >  drawScore ?  VALUE_MATE - MAX_MATE_PLY - 1 - ss->ply
-  //                                 :  VALUE_DRAW + 2 * wdl * drawScore;
+        value =  wdl < -drawScore ? -VALUE_MATE + MAX_MATE_PLY + 1 + ss->ply
+               : wdl >  drawScore ?  VALUE_MATE - MAX_MATE_PLY - 1 - ss->ply
+                                  :  VALUE_DRAW + 2 * wdl * drawScore;
 
-  //       int b =  wdl < -drawScore ? BOUND_UPPER
-  //              : wdl >  drawScore ? BOUND_LOWER : BOUND_EXACT;
+        int b =  wdl < -drawScore ? BOUND_UPPER
+               : wdl >  drawScore ? BOUND_LOWER : BOUND_EXACT;
 
-  //       if (    b == BOUND_EXACT
-  //           || (b == BOUND_LOWER ? value >= beta : value <= alpha))
-  //       {
-  //         tte_save(tte, posKey, value_to_tt(value, ss->ply), ttPv, b,
-  //                  min(MAX_PLY - 1, depth + 6), 0,
-  //                  VALUE_NONE, tt_generation());
-  //         return value;
-  //       }
+        if (    b == BOUND_EXACT
+            || (b == BOUND_LOWER ? value >= beta : value <= alpha))
+        {
+          tte_save(tte, posKey, value_to_tt(value, ss->ply), ttPv, b,
+                   min(MAX_PLY - 1, depth + 6), 0,
+                   VALUE_NONE, tt_generation());
+          return value;
+        }
 
-  //       if (piecesCnt <= TB_CardinalityDTM) {
-  //         Value mate = TB_probe_dtm(pos, wdl, &found);
-  //         if (found) {
-  //           mate += wdl > 0 ? -ss->ply : ss->ply;
-  //           tte_save(tte, posKey, value_to_tt(mate, ss->ply), ttPv, BOUND_EXACT,
-  //                    min(MAX_PLY - 1, depth + 6), 0,
-  //                    VALUE_NONE, tt_generation());
-  //           return mate;
-  //         }
-  //       }
+        if (piecesCnt <= TB_CardinalityDTM) {
+          Value mate = TB_probe_dtm(pos, wdl, &found);
+          if (found) {
+            mate += wdl > 0 ? -ss->ply : ss->ply;
+            tte_save(tte, posKey, value_to_tt(mate, ss->ply), ttPv, BOUND_EXACT,
+                     min(MAX_PLY - 1, depth + 6), 0,
+                     VALUE_NONE, tt_generation());
+            return mate;
+          }
+        }
 
-  //       if (PvNode) {
-  //         if (b == BOUND_LOWER) {
-  //           bestValue = value;
-  //           if (bestValue > alpha)
-  //             alpha = bestValue;
-  //         } else
-  //           maxValue = value;
-  //       }
-  //     }
-  //   }
-  // }
+        if (PvNode) {
+          if (b == BOUND_LOWER) {
+            bestValue = value;
+            if (bestValue > alpha)
+              alpha = bestValue;
+          } else
+            maxValue = value;
+        }
+      }
+    }
+  }
 
   // Step 6. Static evaluation of the position
   if (inCheck) {
