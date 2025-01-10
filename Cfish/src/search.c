@@ -863,24 +863,24 @@ static void uci_print_pv(Pos *pos, Depth depth, Value alpha, Value beta)
     //     && TB_MaxCardinalityDTM > 0)
     //   TB_expand_mate(pos, &rm->move[i]);
 
-    printf("info depth %d seldepth %d multipv %d score %s",
-           d, rm->move[i].selDepth, i + 1,
-           uci_value(buf, v));
+    // printf("info depth %d seldepth %d multipv %d score %s",
+    //        d, rm->move[i].selDepth, i + 1,
+    //        uci_value(buf, v));
 
-    if (!tb && i == pvIdx)
-      printf("%s", v >= beta ? " lowerbound" : v <= alpha ? " upperbound" : "");
+    // if (!tb && i == pvIdx)
+    //   printf("%s", v >= beta ? " lowerbound" : v <= alpha ? " upperbound" : "");
 
-    printf(" nodes %"PRIu64" nps %"PRIu64, nodes_searched,
-                              nodes_searched * 1000 / elapsed);
+    // printf(" nodes %"PRIu64" nps %"PRIu64, nodes_searched,
+    //                           nodes_searched * 1000 / elapsed);
 
-    if (elapsed > 1000)
-      printf(" hashfull %d", tt_hashfull());
+    // if (elapsed > 1000)
+    //   printf(" hashfull %d", tt_hashfull());
 
-    printf(" tbhits %"PRIu64" time %"PRIi64" pv", tbhits, elapsed);
+    // printf(" tbhits %"PRIu64" time %"PRIi64" pv", tbhits, elapsed);
 
-    for (int idx = 0; idx < rm->move[i].pvSize; idx++)
-      printf(" %s", uci_move(buf, rm->move[i].pv[idx], is_chess960()));
-    printf("\n");
+    // for (int idx = 0; idx < rm->move[i].pvSize; idx++)
+    //   printf(" %s", uci_move(buf, rm->move[i].pv[idx], is_chess960()));
+    // printf("\n");
   }
   fflush(stdout);
   funlockfile(stdout);
