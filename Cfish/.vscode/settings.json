@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "tbprobe.h": "c",
+        "timeman.h": "c"
+    }
+}
