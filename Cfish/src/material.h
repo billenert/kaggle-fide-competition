@@ -51,14 +51,14 @@ struct MaterialEntry {
 
 typedef struct MaterialEntry MaterialEntry;
 
-typedef MaterialEntry MaterialTable[8192];
+typedef MaterialEntry MaterialTable[1024];
 
 void material_entry_fill(const Pos *pos, MaterialEntry *e, Key key);
 
 INLINE MaterialEntry *material_probe(const Pos *pos)
 {
   Key key = material_key();
-  MaterialEntry *e = &pos->materialTable[key >> (64-13)];
+  MaterialEntry *e = &pos->materialTable[key >> (64-10)];
 
   if (unlikely(e->key != key))
     material_entry_fill(pos, e, key);

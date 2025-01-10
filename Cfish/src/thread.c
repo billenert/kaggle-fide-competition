@@ -82,23 +82,23 @@ static THREAD_FUNC thread_init(void *arg)
   if (settings.numaEnabled) {
     pos = numa_alloc(sizeof(Pos));
     pos->pawnTable = numa_alloc(PAWN_ENTRIES * sizeof(PawnEntry));
-    pos->materialTable = numa_alloc(8192 * sizeof(MaterialEntry));
+    pos->materialTable = numa_alloc(1024 * sizeof(MaterialEntry));
     pos->counterMoves = numa_alloc(sizeof(CounterMoveStat));
     pos->history = numa_alloc(sizeof(ButterflyHistory));
     pos->captureHistory = numa_alloc(sizeof(CapturePieceToHistory));
     pos->rootMoves = numa_alloc(sizeof(RootMoves));
-    pos->stack = numa_alloc((MAX_PLY + 110) * sizeof(Stack));
-    pos->moveList = numa_alloc(10000 * sizeof(ExtMove));
+    pos->stack = numa_alloc((MAX_PLY + 10) * sizeof(Stack));
+    pos->moveList = numa_alloc(1000 * sizeof(ExtMove));
   } else {
     pos = calloc(sizeof(Pos), 1);
     pos->pawnTable = calloc(PAWN_ENTRIES * sizeof(PawnEntry), 1);
-    pos->materialTable = calloc(8192 * sizeof(MaterialEntry), 1);
+    pos->materialTable = calloc(1024 * sizeof(MaterialEntry), 1);
     pos->counterMoves = calloc(sizeof(CounterMoveStat), 1);
     pos->history = calloc(sizeof(ButterflyHistory), 1);
     pos->captureHistory = calloc(sizeof(CapturePieceToHistory), 1);
     pos->rootMoves = calloc(sizeof(RootMoves), 1);
-    pos->stack = calloc((MAX_PLY + 110) * sizeof(Stack), 1);
-    pos->moveList = calloc(10000 * sizeof(ExtMove), 1);
+    pos->stack = calloc((MAX_PLY + 10) * sizeof(Stack), 1);
+    pos->moveList = calloc(1000 * sizeof(ExtMove), 1);
   }
   pos->threadIdx = idx;
   pos->counterMoveHistory = cmhTables[node];
@@ -183,7 +183,7 @@ static void thread_destroy(Pos *pos)
 
   if (settings.numaEnabled) {
     numa_free(pos->pawnTable, PAWN_ENTRIES * sizeof(PawnEntry));
-    numa_free(pos->materialTable, 8192 * sizeof(MaterialEntry));
+    numa_free(pos->materialTable, 1024 * sizeof(MaterialEntry));
     numa_free(pos->counterMoves, sizeof(CounterMoveStat));
     numa_free(pos->history, sizeof(ButterflyHistory));
     numa_free(pos->captureHistory, sizeof(CapturePieceToHistory));
